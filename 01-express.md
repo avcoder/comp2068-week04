@@ -1,4 +1,114 @@
-[Slide How the MEAN stack fits]('./index.html')
+[Slide 3 - You asked](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=3)
+You asked: where does response and request come from? magically populated
+
+Show book chapter on [higher order fn](http://eloquentjavascript.net/05_higher_order.html)
+
+Use [repl.it](https://repl.it) to code below:
+
+Let's start with this code. Run it.
+
+```js
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+```
+
+Q. How would I abstract it so that I can make it loop n times?
+A. Create a function called repeat(n)
+
+```js
+function repeat(n) {
+  for (let i = 0; i < n; i++) {
+    console.log(i);
+  }
+}
+
+repeat(7);
+```
+
+Q. How would I abstract it so that instead of console.log being the function, I can pass in my own function in order to do something with i?
+A. Pass a function in a function
+
+```js
+function repeat(n, myFunc) {
+  for (let i = 0; i < n; i++) {
+    myFunc(i);
+  }
+}
+
+repeat(3, alert);
+```
+
+Or instead of alert/console.log try creating your own function
+
+```js
+function repeat(n, myFunc) {
+  for (let i = 0; i < n; i++) {
+    myFunc(i);
+  }
+}
+
+repeat(3, function(x) {
+  console.log(x * 2);
+});
+```
+
+Q. So how did our x get populated?
+A. x was prepopulated before my function was called (hence callback)
+
+Get [create server code](https://github.com/avcoder/comp2068-week01/blob/master/02-helloworld.md)
+
+```js
+http.createServer(function(request, response) {
+  console.log(request.url);
+  response.writeHead(200);
+  response.end('Our first node page');
+});
+```
+
+Let's strip it down to its essentials
+
+```js
+createServer(function(request) {
+  console.log(request.url);
+});
+```
+
+So working backwards realize that req/res are being populated before my function is being called
+
+* functions are OBJECTS too!!
+
+```js
+const http = {
+  createServer: function createServer(myFunc) {
+    let req = {
+      url: '/about',
+      host: 'www.domain.com'
+    };
+
+    const res = {
+      send: function(msg) {
+        console.log(msg);
+      }
+    };
+
+    myFunc(req, res);
+  }
+};
+
+http.createServer(function(request, response) {
+  console.log(request.url);
+  response.send('hi');
+});
+```
+
+---
+
+Q. What is role of request?
+A. Debug in VS Code to see request object during GET request
+
+[Slide How the MEAN stack fits]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=5')
+[MVC]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=6')
 
 # Express
 
@@ -8,11 +118,11 @@ Node designed for network comm, not specifically for web
 
 So far we've been creating webservers with Node `require('http')` and then `require('connect')` at a low level
 
-Now it's `require('express')`
+[http vs connect]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7')
+[connect vs express]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=8')
+[express defn]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=9')
 
-Built on top of and extends connect and makes use of its middleware architecture
-
-uses template engines, routing system, and more
+Q. Spot any differences between connect and express?
 
 [npm.im/express](http://npm.im/express)
 
@@ -86,57 +196,6 @@ app.delete('/',
 
 ---
 
-You asked: where does response and request come from? magically populated
-
-So let's start with the below, but strip it down to its essentials
-
-Use [repl.it](https://repl.it) to code below:
-
-```js
-app.get('/', function(req, res) {
-  res.send('Hello World');
-});
-```
-
-So working backwards realize that req/res are being populated before my function is being called
-
-```js
-function get(path, myFunction) {
-  let request = {
-    a: 'hi',
-    b: 2,
-    c: true
-  };
-
-  myFunction(request);
-}
-
-get('/', function(req) {
-  console.log(req);
-});
-```
-
-And to include the prefix app.
-
-```js
-const app = {
-  a: 'hi',
-  get: (path, myFunction) => {
-    let request = {
-      a: 'hi',
-      b: 2,
-      c: true
-    };
-
-    myFunction(request);
-  }
-};
-
-app.get('/', function(req) {
-  console.log(req);
-});
-```
-
 ---
 
 # Express generator to pre-build website
@@ -153,6 +212,7 @@ Run `express -h` to see options. There are a few different template engines whic
 
 [Slide of mvc model]()
 
+* MVC is a design architecture to separate the logic, data, and visualization of an application
 * views refer to our template engines. But we don't serve html files anymore because it doesn't support server side variables.
 * models relate to db
 * dispatcher - at a given url, do this
@@ -176,6 +236,7 @@ routes/ this is the dispatcher. app.get('/', ...) app.post('/', ...) etc.
 * Notice it's mostly html. The <%> tags are like php.
 * Where does the value of title come from? // provided in controller
 * notice different kinds of tags [<% <%= <%-](http://ejs.co/)
+* `<% ... %>` Outputs server-side content, similar to the PHP echo command
 
 ### View routes/index.js
 
@@ -256,6 +317,7 @@ router.get('/', indexController.homePage);
 
 * view app.js - more complex, more deps
 * Add comment // links to our controllers or route files above `var routes = require...`
+* `const app = express();` Creates a new instance of an express application so that it can be configured
 * When we say res.render how does it know where to look for index? `app.set('views', path.join(__dirname, 'views'));`
 * Here is where we use -e `app.set('view engine', 'ejs');`
 * didn't have to specify css file located in public since `app.use(express.static(path.join(__dirname, 'public')));`
@@ -321,11 +383,35 @@ router.get('/random', (req, res, next) => {
 # Deployment
 
 * Upload current code to Github /comp2068-lesson4-part2
-* most internet hosting companies don't support node. Only cloud services do (Digital Ocean, AWS, heroku, google, azure)
+* most internet hosting companies don't support node. Only cloud services do (Digital Ocean, Amazon, heroku, google, azure)
 
 How is cloud hosting different from traditional hosting?
 
-\*
+* Benefits are scalability due to on demand servers, faster performance, cheaper since it's pay per use
+* traditional hosting is if you reach a certain bandwidth, you get charged, and people are waiting, you don't get more bandwidth
+* we get demand spikes which means we have to buy enough servers to always meet that maximum which is expensive on a monthly basis
+* clouds - if server is loaded, it automatically spins up another server, then turns off if low usage. So don't have to buy hardware.
+* there aren't many cloud hosting companies since you have to have plenty of data centers
+* heroku gives us 5 free apps we can upload
+
+1.  Login to heroku.com
+1.  Click New
+1.  Give your app a name gcxxx-lesson4
+1.  Deploy via Github
+1.  Enable automatic deploys
+1.  Click Deploy Branch
+1.  View website
+
+* Show how auto deploy works (add a user name to array)
+* Show how Activity tab in heroku dashboard can roll back to previous version
+
+# Lab 4
+
+* Use express generator to make mini-express site where each person in your family gets their own page and tell me something about them
+* no styles needed. Yes - upload to heroku
+* show example
+* if you do lab4, assignment 1 is just a bigger version of it
+* for assignment 1 part 1, aim to do
 
 # What is package-lock.json?
 
