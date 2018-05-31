@@ -1,6 +1,8 @@
 [Slide 3 - You asked](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=3)
 You asked: where does response and request come from? magically populated
 
+[10,000 foot view GET](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=4)
+
 Show book chapter on [higher order fn](http://eloquentjavascript.net/05_higher_order.html)
 
 Use [repl.it](https://repl.it) to code below:
@@ -120,50 +122,23 @@ So far we've been creating webservers with Node `require('http')` and then `requ
 
 [http vs connect]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7')
 [connect vs express]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=8')
-[express defn]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=9')
 
 Q. Spot any differences between connect and express?
+A. fyi: res.send == res.end
 
-[npm.im/express](http://npm.im/express)
-
-almost 4 million downloads in just the past week
-
-[Slide comparing connect with express hello world]()
+[express defn]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=9')
 
 # Hello world using Express
 
-* Create lesson4 folder, and create index.js
+[express defn]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=10')
 
-1.  Run `npm init -y`
-1.  Run `npm i express` you don't need `--save` anymore. Why?
-1.  Double check for node_modules and package.json. Lots of deps!
-1.  Create `app.js`
+Q. What does '/' mean in app.get?
 
-```js
-const express = require('express');
-const app = express();
+Q. What happens if I goto '/asdf' ?
 
-app.get('/', function(req, res) {
-  res.send('Hello World');
-});
+Q. Why is error message GET? // default http method
 
-app.listen(3000);
-console.log('example app listening on port 3000');
-```
-
-What does '/' mean in app.get?
-
-fyi: res.send == res.end
-
-What happens if I goto '/asdf' ?
-
-Why is error message GET? // default http method
-
-What are other [HTTP methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)?
-
-[slide showing app.VERB in ppt]()
-
-The name of the command (get, post) corresponds to the kind of request we want to make (app.get, app.post)
+[http verbs]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=11')
 
 ## Show GET vs POST by creating a form
 
@@ -180,17 +155,8 @@ The name of the command (get, post) corresponds to the kind of request we want t
 ```
 
 1.  Try submitting some data without running a server. Notice URL is a GET request. As if we typed URL in the browser
-1.  If POST, show REST Client extension code example
+1.  If POST, show my node/lab4 and debug to inspect request
 1.  GET reads, POST creates, DELETE erases, PUT updates
-
-So in our app.js, you could have other verbs like:
-
-```js
-app.get('/',
-app.post('/',
-app.put('/',
-app.delete('/',
-```
 
 * Can also use above to create APIs so that JSON data is passed instead of HTML
 
@@ -199,8 +165,6 @@ app.delete('/',
 ---
 
 # Express generator to pre-build website
-
-[npm.im/express-generator](https://www.npmjs.com/package/express-generator)
 
 From now on we will use the express-generator to build all our apps
 
@@ -219,7 +183,7 @@ Run `express -h` to see options. There are a few different template engines whic
 * controller is the logic
 * We will use [EJS](http://ejs.co). But can be used with a variety of HTML templating engines
 * Show [jade example](http://jade-lang.com/). Show how [fussy indents are](https://naltatis.github.io/jade-syntax-docs/)
-* so `express -h` by default uses pug/jade so we have to say `-e` to use ejs. For example `express myapp -e` will create a folder called myapp and inside it will have the structure of folders, some default pages but using [ejs template engine](http://expressjs.com/en/starter/generator.html)
+* by default express uses pug/jade so we have to say `-e` to use ejs. For example `express myapp -e` will create a folder called myapp and inside it will have the structure of folders, some default pages but using [ejs template engine](http://expressjs.com/en/starter/generator.html)
 
 1.  Run `express -e lesson4-part2`
 1.  `cd myapp`
@@ -413,6 +377,6 @@ How is cloud hosting different from traditional hosting?
 * if you do lab4, assignment 1 is just a bigger version of it
 * for assignment 1 part 1, aim to do
 
-# What is package-lock.json?
+# What is package-lock.json? [Answer](https://docs.npmjs.com/files/package-lock.json)
 
-# error msg if running port 3000 twice
+# error msg if running port 3000 twice. (![Answer](./static/images/killProcess.PNG))

@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <title>WebSlides: Making HTML presentations easy</title>
+  <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features.">
+
+  <!-- URL CANONICAL -->
+  <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+    rel="stylesheet">
+
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type='text/css' media='all' href="././static/css/webslides.css">
+
+  <!-- Optional - CSS SVG Icons (Font Awesome) -->
+  <link rel="stylesheet" type='text/css' media='all' href="./static/css/svg-icons.css">
+
+  <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+  <!-- FACEBOOK -->
+  <meta property="og:url" content="http://your-url.com/">
+  <!-- YOUR URL -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WebSlides — Making HTML Presentations Easy">
+  <!-- EDIT -->
+  <meta property="og:description" content="WebSlides is about telling stories beautifully. Just the essential features. Good karma.">
+  <!-- EDIT -->
+  <meta property="og:updated_time" content="2017-01-04T17:20:50">
+  <!-- EDIT -->
+  <meta property="og:image" content="./static/images/share-webslides.jpg">
+  <!-- EDIT -->
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@webslides">
+  <!-- EDIT -->
+  <meta name="twitter:creator" content="@jlantunez">
+  <!-- EDIT -->
+  <meta name="twitter:title" content="WebSlides — Making HTML Presentations Easy">
+  <!-- EDIT -->
+  <meta name="twitter:description" content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use.">
+  <!-- EDIT -->
+  <meta name="twitter:image" content="./static/images/share-webslides.jpg">
+  <!-- EDIT -->
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" sizes="16x16" href="./static/images/favicons/favicon.png">
+  <link rel="shortcut icon" sizes="32x32" href="./static/images/favicons/favicon-32.png">
+  <link rel="apple-touch-icon icon" sizes="76x76" href="./static/images/favicons/favicon-76.png">
+  <link rel="apple-touch-icon icon" sizes="120x120" href="./static/images/favicons/favicon-120.png">
+  <link rel="apple-touch-icon icon" sizes="152x152" href="./static/images/favicons/favicon-152.png">
+  <link rel="apple-touch-icon icon" sizes="180x180" href="./static/images/favicons/favicon-180.png">
+  <link rel="apple-touch-icon icon" sizes="192x192" href="./static/images/favicons/favicon-192.png">
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#333333">
+  <style>
+    input[type=range] {
+      -webkit-appearance: none;
+      background: #333;
+      border: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 16px;
+      width: 120px;
+      background: lime;
+      margin-top: -4px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+      border: none;
+      height: 16px;
+      width: 120px;
+      background: lime;
+      margin-top: -4px;
+      border-radius: 0;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+</head>
+
+<body>
+  <header role="banner">
+    <nav role="navigation">
+      <p class="logo">
+        <a href="index.html" title="WebSlides">WebSlides</a>
+      </p>
+      <ul>
+        <li class="github">
+          <a rel="external" href="https://github.com/avcoder/comp2068-week04" title="Github">
+            <svg class="fa-github">
+              <use xlink:href="#fa-github"></use>
+            </svg>
+            <em>WebSlides</em>
+          </a>
+        </li>
+        <li class="twitter">
+          <a rel="external" href="https://twitter.com/webslides" title="Twitter">
+            <svg class="fa-twitter">
+              <use xlink:href="#fa-twitter"></use>
+            </svg>
+            <em>@WebSlides</em>
+          </a>
+        </li>
+        <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <article id="webslides" class="horizontal">
+      <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+
+      <section class="bg-primary">
+        <!-- Credit: image from unsplash.com -->
+        <span class="background" style="background-image:url('././static/images/splash.jpg'); filter: opacity(.1);"></span>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h1>
+            <strong>Express</strong>
+          </h1>
+          <p class="text-intro">Week 4
+            <br/>COMP 2068
+          </p>
+          <p>
+            <a href="https://github.com/avcoder/comp2068-week04" class="button zoomIn" title="Download WebSlides for free">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              Class Notes
+            </a>
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-50 aligncenter">
+          <h2>
+            <strong>To Do Today:</strong>
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock reasons">
+              <li>
+                <h2>
+                  Express
+                </h2>
+                <p>Know how it's built on top of connect and makes use of its middleware architecture</p>
+              </li>
+              <li>
+                <h2>Express Generator</h2>
+                <p>Learn about it's middleware architecture, template engines, routing system and MVC model</p>
+              </li>
+              <li>
+                <h2>Assignment 1</h2>
+                <p>Talk about Assignment 1</p>
+              </li>
+              <li>
+                <h2>Deployment</h2>
+                <p>Deploy site on heroku, azure</p>
+              </li>
+
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>
+            You asked...
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock steps">
+              <li class="text-intro">
+                <b>app.get('/', function(req, res) { ... })
+                  <br> How do the above request and response parameters magically get populated so that I can use them?</b>
+              </li>
+              <li class="text-intro">
+                <b>what is the role of attribute "request" in the function Method?</b>
+              </li>
+
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>
+            10,000 foot view - HTTP GET request and response
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <img src="./static/images/httpsvr.png" alt="http request and response illustration" style="height: 70vh">
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>
+            MEAN stack
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <img src="./static/images/mean.PNG" alt="mean stack" style="height: 70vh">
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>
+            MVC Model
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <img src="./static/images/mvc.png" alt="mvc" style="height: 70vh">
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>Express</h2>
+          <ul class="flexblock steps">
+            <li class="text-intro">
+              <a href="http://expressjs.com">expressjs.com</a>
+            </li>
+            <li class="text-intro">Other similar node frameworks are Hapi, and Koa</li>
+            <li class="text-intro">
+              <a href="http://npm.im/express">npm.im/express</a>
+            </li>
+            <li class="text-intro">But the popularity on npm for Express suggests reliability, legitimacy</li>
+          </ul>
+
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="aligncenter">
+        <div class="wrap size-90">
+          <h4>http vs connect</h4>
+          <div class="grid vertical-align">
+            <!-- .end .column -->
+            <div class="column">
+              <pre><code><h4>
+const http = require('http');
+
+http
+.createServer(function(request, response) {
+  response.writeHead(200);
+  response.end('Our first node page');
+})
+.listen(3000);
+                      </h4></code></pre>
+            </div>
+            <div class="column">
+              <pre><code><h4>
+const connect = require('connect');
+
+const app = connect();
+
+const hello = (req, res, next) => 
+                res.end('hello world');
+
+app.use('/', hello);
+app.listen(3000);
+                    </h4></code></pre>
+            </div>
+            <!-- .end .column -->
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="aligncenter ">
+        <div class="wrap size-90">
+          <h4>connect vs express</h4>
+          <div class="grid vertical-align">
+            <!-- .end .column -->
+            <div class="column">
+              <pre><code><h4>
+const connect = require('connect');
+
+const app = connect();
+
+const hello = (req, res, next) => 
+                res.end('hello world');
+
+app.use('/', hello);
+app.listen(3000);
+                      </h4></code></pre>
+            </div>
+            <div class="column">
+              <pre><code><h4>
+const express = require('express');
+
+const app = express();
+
+const hello = (req, res, next) => 
+                res.send('hello world');
+
+app.get('/', hello);
+app.listen(3000);
+                    </h4></code></pre>
+            </div>
+            <!-- .end .column -->
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>Express</h2>
+          <p class="text-intro">
+            is built on top of and extends connect and makes use of its middleware architecture
+          </p>
+          <p class="text-intro">
+            uses template engines, routing system, and more
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap">
+          <div class="grid vertical-align">
+            <!-- .end .column -->
+            <div class="column">
+              <h2>Create a hello world using Express</h2>
+              <pre><code><h4>
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res, next) => {
+  res.send('hello world')
+});
+
+app.listen(3000);
+                                </h4></code></pre>
+            </div>
+            <div class="column">
+              <h2>Steps</h2>
+              <ul class="flexblock reasons">
+                <li class="text-intro">Create lesson4 folder</li>
+                <li class="text-intro">Run: npm init -y</li>
+                <li class="text-intro">Run: npm i express (you don't need --save anymore. Why?)</li>
+                <li class="text-intro">Double check for node_modules and package.json. </li>
+                <li class="text-intro">Create: app.js</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP Verbs</a>
+          </h2>
+          <ul class="flexblock steps">
+            <li class="text-intro">
+              GET
+            </li>
+            <li class="text-intro">POST</li>
+            <li class="text-intro">PUT</a>
+            </li>
+            <li class="text-intro">DELETE</li>
+          </ul>
+          <br>
+          <br>
+          <p class="text-intro">app.&lt;VERB>(): defines middleware functions to respond to HTTP requests made to a certain path in conjunction
+            with the HTTP verb declared.
+            <br> The name of the command (get, post) corresponds to the kind of request we want to make such as:
+            <br>
+            <code>app.get('/',  </code>
+            <br>
+            <code>app.post('/',  </code>
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>Express Generator</h2>
+          <p class="text-intro">
+            <a href="https://www.npmjs.com/package/express-generator">
+              <code>npm i -g express-generator</code>
+            </a>
+          </p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section>
+        <!-- .wrap = container (width: 90%) -->
+        <div class=" wrap ">
+          <h2 class="alignleft ">
+            <strong>References</strong>
+          </h2>
+        </div>
+        <ol>
+          <li>http://eloquentjavascript.net/05_higher_order.html</li>
+          <li>https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#functions-as-values</li>
+          <li></li>
+        </ol>
+
+        <!-- .end .wrap -->
+      </section>
+
+    </article>
+    <!-- end article -->
+  </main>
+  <!-- end main -->
+
+  <!-- A global footer
+
+     <footer role="contentinfo ">
+      <div class="wrap ">
+        <p>An <a href="https://github.com/webslides/webslides ">open source solution</a>, by <a href="https://twitter.com/webslides ">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+  <!-- Required -->
+  <script src="././static/js/webslides.js "></script>
+  <script>
+    window.ws = new WebSlides();
+  </script>
+
+  <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+  <script defer src="././static/js/svg-icons.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js "></script>
+
+</body>
+
+</html>
