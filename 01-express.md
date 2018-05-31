@@ -107,7 +107,7 @@ http.createServer(function(request, response) {
 ---
 
 Q. What is role of request?
-A. Debug in VS Code to see request object during GET request  (open /node/helloworld  )
+A. Debug in VS Code to see request object during GET request (open /node/helloworld )
 
 [Slide How the MEAN stack fits](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=5)
 [MVC](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=6)
@@ -119,6 +119,7 @@ A. Debug in VS Code to see request object during GET request  (open /node/hellow
 * controller is the logic
 
 # Express
+
 [Slide How the MEAN stack fits](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7)
 
 [Express website](http://expressjs.com)
@@ -133,19 +134,19 @@ So far we've been creating webservers with Node `require('http')` and then `requ
 
 Q. Spot any differences between connect and express?
 A. fyi: res.send == res.end
-
+[express defn](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=10)
 
 # Hello world using Express
 
-[express defn](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=10)
+[hello world](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=11)
 
-Q. What does '/' mean in app.get?   A. Show via REST Client extension.http what happens when you goto georgian's about page
+Q. What does '/' mean in app.get? A. Show via REST Client extension.http what happens when you goto georgian's about page
 
 Q. What happens if I goto '/asdf' ?
 
 Q. Why is error message GET? // default http method
 
-[http verbs](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=11)
+[http verbs](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=12)
 
 ## Show GET vs POST by creating a form
 
@@ -170,6 +171,8 @@ Q. Why is error message GET? // default http method
 ---
 
 ---
+
+[Express generator](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=13)
 
 # Express generator to pre-build website
 
