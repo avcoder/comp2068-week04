@@ -107,7 +107,7 @@ http.createServer(function(request, response) {
 ---
 
 Q. What is role of request?
-A. Debug in VS Code to see request object during GET request
+A. Debug in VS Code to see request object during GET request  (open /node/helloworld  )
 
 [Slide How the MEAN stack fits]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=5')
 [MVC]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=6')
@@ -119,6 +119,7 @@ A. Debug in VS Code to see request object during GET request
 * controller is the logic
 
 # Express
+[Slide How the MEAN stack fits]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7')
 
 [Express website](http://expressjs.com)
 

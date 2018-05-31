@@ -202,13 +202,15 @@
               <li class="text-intro">
                 <b>app.get('/', function(req, res) { ... })
                   <br> How do the above request and response parameters magically get populated so that I can use them?</b>
-                <pre><code>
+                <pre>
+                <code>
 http.createServer(function(request, response) {
   console.log(request.url);
   response.writeHead(200);
   response.end('Our first node page');
 });                    
-                  </code></pre>
+                  </code>
+                </pre>
               </li>
               <li class="text-intro">
                 <b>what is the role of attribute "request" in the function Method?</b>
@@ -218,7 +220,10 @@ http.createServer(function(request, response) {
               <a href="http://eloquentjavascript.net/05_higher_order.html">http://eloquentjavascript.net/05_higher_order.html</a>
             </p>
             <p>
-              <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#functions-as-values">https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#functions-as-values</a>
+              <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#functions-as-values">Functions can be passed into other functions</a>
+            </p>
+            <p>
+              <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md">Function are objects!</a>
             </p>
           </div>
           <!-- .end .bg-white shadow -->
@@ -586,7 +591,7 @@ app.listen(3000);
         <ol>
           <li>http://eloquentjavascript.net/05_higher_order.html</li>
           <li>https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#functions-as-values</li>
-          <li></li>
+          <li>https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md</li>
         </ol>
 
         <!-- .end .wrap -->
