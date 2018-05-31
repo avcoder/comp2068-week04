@@ -109,8 +109,8 @@ http.createServer(function(request, response) {
 Q. What is role of request?
 A. Debug in VS Code to see request object during GET request  (open /node/helloworld  )
 
-[Slide How the MEAN stack fits]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=5')
-[MVC]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=6')
+[Slide How the MEAN stack fits](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=5)
+[MVC](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=6)
 
 * MVC is a design architecture to separate the logic, data, and visualization of an application
 * views refer to our template engines. But we don't serve html files anymore because it doesn't support server side variables.
@@ -119,7 +119,7 @@ A. Debug in VS Code to see request object during GET request  (open /node/hellow
 * controller is the logic
 
 # Express
-[Slide How the MEAN stack fits]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7')
+[Slide How the MEAN stack fits](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7)
 
 [Express website](http://expressjs.com)
 
@@ -127,9 +127,9 @@ Node designed for network comm, not specifically for web
 
 So far we've been creating webservers with Node `require('http')` and then `require('connect')` at a low level
 
-[http vs connect]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7')
+[http vs connect](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=8)
 
-[connect vs express]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=8')
+[connect vs express](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=9)
 
 Q. Spot any differences between connect and express?
 A. fyi: res.send == res.end
