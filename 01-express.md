@@ -185,8 +185,10 @@ Express will create an app.js, create a structure of folders, and default pages 
 Run `express -h` to see options. There are a few different template engines which refer to 'Views'
 
 * We will use [EJS](http://ejs.co). But can be used with a variety of HTML templating engines
-* Show [jade example](http://jade-lang.com/). Show how [fussy indents are](https://naltatis.github.io/jade-syntax-docs/)
+* Show [jade example](http://jade-lang.com/). Show how [fussy indents are](https://naltatis.github.io/jade-syntax-docs/)  [W3C Validator](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=14)
 * by default express uses pug/jade so we have to say `-e` to use ejs. For example `express myapp -e` will create a folder called myapp and inside it will have the structure of folders, some default pages but using [ejs template engine](http://expressjs.com/en/starter/generator.html)
+
+[Slide How to create express app](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=14)
 
 ## Examine folder structure that Express built
 
