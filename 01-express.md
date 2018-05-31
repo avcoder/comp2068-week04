@@ -128,6 +128,7 @@ Node designed for network comm, not specifically for web
 So far we've been creating webservers with Node `require('http')` and then `require('connect')` at a low level
 
 [http vs connect]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=7')
+
 [connect vs express]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=8')
 
 Q. Spot any differences between connect and express?
