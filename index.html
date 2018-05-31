@@ -202,12 +202,24 @@
               <li class="text-intro">
                 <b>app.get('/', function(req, res) { ... })
                   <br> How do the above request and response parameters magically get populated so that I can use them?</b>
+                <pre><code>
+http.createServer(function(request, response) {
+  console.log(request.url);
+  response.writeHead(200);
+  response.end('Our first node page');
+});                    
+                  </code></pre>
               </li>
               <li class="text-intro">
                 <b>what is the role of attribute "request" in the function Method?</b>
               </li>
-
             </ul>
+            <p>
+              <a href="http://eloquentjavascript.net/05_higher_order.html">http://eloquentjavascript.net/05_higher_order.html</a>
+            </p>
+            <p>
+              <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#functions-as-values">https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#functions-as-values</a>
+            </p>
           </div>
           <!-- .end .bg-white shadow -->
         </div>
