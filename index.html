@@ -443,9 +443,111 @@ app.listen(3000);
         <!-- .end .wrap -->
       </section>
 
+      <section class="bg-primary">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>How to create an Express app</h2>
+          <div class="grid vertical-align">
+            <!-- .end .column -->
+            <div class="column">
+              <ul class="flexblock specs">
+                <li class="text-intro">1.
+                  <code>express -e myAppName</code>
+                </li>
+                <li class="text-intro">2.
+                  <code>cd myAppName</code>
+                </li>
+                <li class="text-intro">3.
+                  <code>npm i</code>
+                </li>
+                <li class="text-intro">4.
+                  <code>
+                  npm start
+                </code>
+                </li>
+                <li class="text-intro">5. nodemon?</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-blue">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>How to create a route and view</h2>
+          <div class="grid vertical-align">
+            <!-- .end .column -->
+            <div class="column">
+              <ul class="flexblock specs">
+                <li class="text-intro">1. // routes/index.js
+                  <code>router.get('/about', (req, res) => res.render('about', { title: "About Us" });</code>
+                </li>
+                <li class="text-intro">2. // views/about.ejs
+                  <code>&lt;h1>&lt;%= title %>&lt;/h1></code>
+                </li>
+                <li class="text-intro">3. If you download a CSS framework, then put it under public/. Then in ejs file
+                  <code>&lt;link rel="stylesheet" href="/stylesheets/style.css">&lt;link/></code>
+                </li>
+                <li class="text-intro">4. Create controllers/indexController.js
+                  <code>
+                      exports.homePage = (req, res) => {
+                        res.render('about', {
+                          isActive: 'about',
+                        });
+                      };                      
+                </code>
+                </li>
+                <li class="text-intro">5. // Change routes/index.js
+                  <code>
+                    router.get('/about', indexController.homePage);
+                </code>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
 
 
+      <section class="bg-green">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap aligncenter">
+          <h2>How to create partials</h2>
+          <div class="grid vertical-align">
+            <!-- .end .column -->
+            <div class="column">
+              <ul class="flexblock specs">
+                <li class="text-intro">1. Under views/ create new folder called partials/
+                  <code>/views/partials/</code>
+                </li>
+                <li class="text-intro">2. Create header.ejs file
+                  <code>/views/partials/header.ejs</code>
+                </li>
+                <li class="text-intro">3. Create footer.ejs file
+                  <code>/views/partials/footer.ejs</code>
+                </li>
+                <li class="text-intro">4. Cut html code starting from the top down to (and including) the body tag and paste it in header.ejs
+                  <code>
+                      &lt;!DOCUMENT html5> ... &lt;body>
+                  </code>
+                </li>
+                <li class="text-intro">5. // views/index.ejs
+                  <code>
+                      &lt;% include partials/header %>
+                  </code>
+                </li>
+              </ul>
+            </div>
 
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
 
 
 

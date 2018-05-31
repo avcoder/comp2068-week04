@@ -112,6 +112,12 @@ A. Debug in VS Code to see request object during GET request
 [Slide How the MEAN stack fits]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=5')
 [MVC]('http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=6')
 
+* MVC is a design architecture to separate the logic, data, and visualization of an application
+* views refer to our template engines. But we don't serve html files anymore because it doesn't support server side variables.
+* models relate to db
+* dispatcher - at a given url, do this
+* controller is the logic
+
 # Express
 
 [Express website](http://expressjs.com)
@@ -174,21 +180,9 @@ Express will create an app.js, create a structure of folders, and default pages 
 
 Run `express -h` to see options. There are a few different template engines which refer to 'Views'
 
-[Slide of mvc model]()
-
-* MVC is a design architecture to separate the logic, data, and visualization of an application
-* views refer to our template engines. But we don't serve html files anymore because it doesn't support server side variables.
-* models relate to db
-* dispatcher - at a given url, do this
-* controller is the logic
 * We will use [EJS](http://ejs.co). But can be used with a variety of HTML templating engines
 * Show [jade example](http://jade-lang.com/). Show how [fussy indents are](https://naltatis.github.io/jade-syntax-docs/)
 * by default express uses pug/jade so we have to say `-e` to use ejs. For example `express myapp -e` will create a folder called myapp and inside it will have the structure of folders, some default pages but using [ejs template engine](http://expressjs.com/en/starter/generator.html)
-
-1.  Run `express -e lesson4-part2`
-1.  `cd myapp`
-1.  `npm i`
-1.  `nodemon` (visit localhost:3000 to see html page)
 
 ## Examine folder structure that Express built
 
@@ -200,7 +194,8 @@ routes/ this is the dispatcher. app.get('/', ...) app.post('/', ...) etc.
 * Notice it's mostly html. The <%> tags are like php.
 * Where does the value of title come from? // provided in controller
 * notice different kinds of tags [<% <%= <%-](http://ejs.co/)
-* `<% ... %>` Outputs server-side content, similar to the PHP echo command
+* SHOW my lesson4-part2 express app for <%= vs <%-
+* `<%= ... %>` Outputs server-side content, similar to the PHP echo command
 
 ### View routes/index.js
 
