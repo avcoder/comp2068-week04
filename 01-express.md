@@ -134,7 +134,6 @@ So far we've been creating webservers with Node `require('http')` and then `requ
 Q. Spot any differences between connect and express?
 A. fyi: res.send == res.end
 
-[express defn](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=9)
 
 # Hello world using Express
 
