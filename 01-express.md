@@ -139,7 +139,7 @@ A. fyi: res.send == res.end
 
 [express defn](http://avillaruz.computerstudi.es/comp2068/week04/index.html#slide=10)
 
-Q. What does '/' mean in app.get?
+Q. What does '/' mean in app.get?   A. Show via REST Client extension.http what happens when you goto georgian's about page
 
 Q. What happens if I goto '/asdf' ?
 
